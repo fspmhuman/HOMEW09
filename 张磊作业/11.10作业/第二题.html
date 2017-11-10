@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+		<!--求一个三位数，该三位数等与其每位数字的阶乘之和。-->
+		<script>
+			//			function sanweishu(n) {
+			for(var n = 100; n <= 999; n++) {
+				//					b = parseInt(n / 100);
+				//					s = parseInt((n % 100) / 10);
+				//					g = n % 100;
+				var swg;
+				for(B = 1; B <= (parseInt(n / 100)); B++) {
+					B *= B;
+					for(S = 1; S <= (parseInt((n % 100) / 10)); S++) {
+						S *= S;
+						for(G = 1; G <= (n % 100); G++) {
+							G *= G;
+							swg = B + S + G;
+						}
+						if(swg == n) {
+							console.log(n)
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>
