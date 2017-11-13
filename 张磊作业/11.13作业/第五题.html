@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--编写函数rightchange(char,n) 实现字符串char循环右移n位。
+比如rightchange("abcdefg",2) 返回"fgabcde"-->
+		<script>
+			function rightchange(char, n) {
+				var arr = char.split("");
+				n = n % arr.length; 
+				for(var i = 1; i <= n; i++) {
+					arr.unshift(arr.pop());
+				}
+				console.log(arr.join(""));
+			}
+			rightchange("abcdefg", 2);
+		</script>
+
+	</body>
+
+</html>

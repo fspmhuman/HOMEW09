@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--有10个学生的成绩存在数组中，请统计最高分，最低分，并将最高分和最低分学生的下标输出到控制台-->
+		<script>
+			var chengji = [77, 65, 82, 90, 60, 99, 72, 86, 89, 100]
+			minmax = chengji.sort(function(a, b) {
+				return a - b;
+			});
+		var	min = minmax.shift();
+		var	max = minmax.pop();
+			
+			console.log(chengji.indexOf("min"));
+			console.log(chengji.indexOf("max"));
+			
+			
+		</script>
+
+	</body>
+
+</html>

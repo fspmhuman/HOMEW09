@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--勾股定理：直角三角形中，两个直角边的平方和，等于斜边平方和。
+			寻找三边的长度都不大于100，并且三边边长都是整数的可能，在控制台输出。-->
+
+		<script>
+			function gougu(a, b, c) {
+				a < c && a >= 1;
+				b < c && b >= 1;
+				c < 100;
+				if(Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2) && a + b + c <= 100) {
+				console.log(a , b , c);
+				}
+			}
+			
+		</script>
+	</body>
+
+</html>
