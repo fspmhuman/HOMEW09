@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--检测昵称是否是有汉字字母数字下划线组成，6-8位-->
+		<script>
+			var nameInput =prompt();
+			var reg =/[\u4e00-\u95a5|a-zA-Z0-9|"_"]{6,8}/g;
+			console.log(reg.test(nameInput));
+			
+		</script>
+	</body>
+</html>

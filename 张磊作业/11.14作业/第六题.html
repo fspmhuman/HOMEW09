@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--将div#demo.demo转化成<div id="demo" class="demo"></div>-->
+		<script>
+			var str="div#demo.demo"
+			document.write(str.replace(/(\m+)*+#+(\m+)*+.+(\m+)*/g,(<+"$1"+" id="+"$2"+" class="+"$3"></"$1">)));
+			
+		</script>
+	</body>
+</html>

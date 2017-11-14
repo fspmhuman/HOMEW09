@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--检测是否是2到4位汉字-->
+		<script>
+			var YHInput =prompt();
+			var reg =/[\u4e00-\u95a5]{2,4}/g;
+			console.log(reg.test(YHInput));
+		</script>
+		
+		
+	</body>
+</html>

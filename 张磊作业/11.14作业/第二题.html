@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--2 检测是否是本地电话，如010-12345678,0418-12345678-->
+		<script>
+			var phoneNumber = prompt("请输入座机号码查询是否是本市号码：");
+			var reg = /^010-\d{8}$/g;
+			if(reg.test(phoneNumber)){
+				alert("是本市号码");
+			}
+			else{
+				alert("不是本市号码");
+				
+			}
+			
+		</script>
+		
+		
+	</body>
+</html>
