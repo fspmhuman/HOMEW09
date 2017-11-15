@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>鼠标事件</title>
+	</head>
+
+	<body>
+		<p id="pText">十天内免登陆
+		</p>
+		<script>
+			var om = document.getElementById("pText");
+			om.style.border = 1 + "px";
+			om.style.borderColor = "#fff";
+			om.style.margin = 5+"px";
+			om.style.padding = 0;
+			om.style.width=100+"px";
+			om.onmouseover = function() {
+				style.borderColor = "yellow";
+			}
+			console.log(om);
+			
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>改变文本自己大小按钮</title>
+	</head>
+
+	<body>
+		<p class="gaibian">文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+			<br> 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+			<br> 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+			<br> 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+			<br> 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+		</p>
+		<script>
+			var size =15+"px";
+			var  odiv = document.getElementsByClassName("gaibian");
+			var bibutton = document.createElement("input");
+			bibutton.type = "button";
+			document.body.appendChild(bibutton);
+			bibutton.style.width = 40+"px";
+			bibutton.value ="放大";
+			bibutton.onclick = function(size){
+				size+=2;
+				odiv.style.fontSize = size+"px";
+			}
+			
+			var litbutton = document.createElement("button");
+			litbutton.type = "button";
+			document.body.appendChild(litbutton);
+			litbutton.style.width = 40+"px";
+			litbutton.style.height = 25+"px";
+			litbutton.value ="缩小";
+			litbutton.onclick = function(){
+				size-=2;
+				odiv.style.fontSize = size+"px";
+			}
+		</script>
+	</body>
+
+</html>

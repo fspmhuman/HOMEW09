@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		   <script>
+        window.onload=function(){
+            var btnSub=document.getElementById("btnSub");
+            var btnAdd=document.getElementById("btnAdd");
+            var btnRed=document.getElementById("btnRed");
+            var btnYellow=document.getElementById("btnYellow");
+            var pText=document.getElementById("pText");
+
+            var size=15;//默认字体是15px
+            btnSub.onclick=function(){
+                if(size>=5){//设置最小字体为5px
+　　　　　　　　　　　　size-=2;//每次减2px
+　　　　　　　　　　　　pText.style.fontSize=size+'px';　　
+                }
+               
+            }
+
+            btnAdd.onclick=function(){
+　　　　　　　　if(size<=30){//设置最大字体是30px
+                size+=2;//每次点击按钮字体增加2
+                pText.style.fontSize=size+'px';//+'px'为了浏览器兼容
+　　　　　　　　}
+            }
+
+            btnRed.onclick= function () {
+                pText.className="red"; //为什么不写成 pText.class="red"???  答案:class是保留字,不能用
+            }
+
+            btnYellow.onclick=function(){
+                pText.className="yellow";
+            }
+
+        }
+    </script>
+</head>
+<body>
+	</body>
+</html>
