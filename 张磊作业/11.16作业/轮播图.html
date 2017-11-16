@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body {
+				position: relative;
+			}
+			
+			img {
+				display: none;
+				position: absolute;
+				width: 500px;
+				height: 375px;
+				top: auto;
+				left: 259px;
+			}
+			
+			button {
+				height: 375px;
+			}
+			
+			#bleft {
+				float: left;
+			}
+			
+			#bright {
+				float: right;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button id="bleft">上一页</button>
+		<img id="one" src="img/u=1628103358,1948453686&fm=200&gp=0.jpg" />
+		<img id="two" src="img/u=1886350548,3452143251&fm=27&gp=0.jpg" />
+		<img id="three" src="img/u=2038070015,1830947280&fm=27&gp=0.jpg" />
+		<img id="four" src="img/u=2169473821,749243494&fm=11&gp=0.jpg" />
+		<img id="five" src="img/u=2659399033,110640336&fm=27&gp=0.jpg" />
+		<button id="bright">下一页</button>
+
+		<script>
+			var obleft = document.querySelector("#bleft");
+			var obright = document.querySelector("#bright");
+			var imgchenge = document.querySelectorAll("img");
+
+			var a = 1;
+			imgchenge[a].style.display = "block";
+			//				imgchenge[a+1].style.display = "none";
+			//				imgchenge[a-1].style.display = "none";
+			obleft.onclick = function imchenge() {
+				a--;
+				if(a < 0) {
+					a = 4;
+					imgchenge[0].style.display = "none";
+				} else if(
+					a == 0) {
+					imgchenge(4).style.display = "none";
+				}
+				imgchenge[a].style.display = "block";
+				imgchenge[a + 1].style.display = "none";
+				imgchenge[a - 1].style.display = "none";
+			}
+			obright.onclick = function imchenge() {
+				a++;
+				if(a > 4) {
+					a = 0;
+					imgchenge[4].style.display = "none";
+				} else if(
+					a == 4
+				) {
+					imgchenge[0].style.display = "none";
+				}
+				imgchenge[a].style.display = "block";
+				imgchenge[a + 1].style.display = "none";
+				imgchenge[a - 1].style.display = "none";
+			}
+		</script>
+
+	</body>
+
+</html>
