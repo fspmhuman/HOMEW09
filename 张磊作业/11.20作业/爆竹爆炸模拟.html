@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body {
+				position: relative;
+			}
+			#boom{
+				top: 0;
+				position: absolute;
+				width: 40px;
+				height: auto;
+				left: -5px;
+				display: none;
+			}
+			
+			#baozhu {
+				top: 200px;
+				width: 10px;
+				height: 40px;
+				border: 1px solid #f00;
+				position: absolute;
+			}
+			
+			#baoyin {
+				left: 5px;
+				top: 240px;
+				width: 2px;
+				height: 60px;
+				border: none;
+				background-color: lightsteelblue;
+				position: absolute;
+				animation: myfirst 5s;
+			}
+			
+			@-webkit-keyframes myfirst {
+				from {
+					height: 60px;
+				}
+				to {
+					height: 0;
+				}
+			}
+			
+			#fire {
+				top: 300px;
+				width: 10px;
+				height: auto;
+				position: absolute;
+			}
+		</style>
+	</head>
+
+	<body>
+		<img id="boom" src="img/timg (2).jpg"/>
+		
+		<div id="baozhu">
+
+		</div>
+
+		<div id="baoyin">
+
+		</div>
+		<img id="fire" src="img/timg (1).jpg" />
+		<script type="text/javascript">
+			var oDiv = document.querySelector("#baozhu");
+			var oImg =document.querySelector("#boom");
+			var timp = 0;
+			var timer = 0;
+			var uptop=200
+			
+			timer = setTimeout(function() {
+				timp = setInterval(function() {
+                    clearInterval(timer);
+					uptop -=7;
+					timp++;
+					oDiv.style.top = uptop + "px";
+					if(uptop <= 0) {
+						oDiv.style.display = "none";
+						oImg.style.display ="block";
+					}
+				}, 300)
+			}, 5000)
+		</script>
+
+	</body>
+
+</html>
