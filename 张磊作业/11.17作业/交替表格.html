@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			tr td {
+				width: 100px;
+				height: 30px;
+			}
+			
+			button {
+				margin: 10px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<table border="" cellspacing="" cellpadding="">
+
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+
+		<button>换行变色</button>
+		<script type="text/javascript">
+			var oTr = document.querySelectorAll("tr");
+			for(i = 0; i < oTr.length; i++) {
+				if(i % 2 != 0) {
+					oTr[i].style.backgroundColor = "green";
+				}
+			};
+			var oBtn = document.querySelector("button");
+
+			oBtn.onclick = function (){
+				for(j = 0; j < oTr.length; j++) {
+					oTr[j].style.backgroundColor = "#fff";
+				
+				if((j+1) % 2 != 0) {
+					oTr[j].style.backgroundColor = "green";
+				}}
+			};
+		</script>
+
+	</body>
+
+</html>

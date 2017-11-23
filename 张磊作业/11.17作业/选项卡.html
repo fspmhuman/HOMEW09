@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				position: relative;
+				width: 2000px;
+				height: 2000px;
+			}
+			
+			div {
+				position: absolute;
+				float: left;
+				top: 100px;
+				left: 340px;
+				width: 360px;
+			}
+			
+			button {
+				width: 120px;
+				margin: 0;
+				padding: 0;
+				float: left;
+			}
+			
+			ul {
+				display: block;
+				list-style: none;
+				position: absolute;
+				top: 130px;
+				left: 300px;
+			}
+			
+			ol {
+				display: none;
+				list-style: none;
+				position: absolute;
+				top: 130px;
+				left: 300px;
+			}
+			
+			img {
+				display: none;
+				list-style: none;
+				position: absolute;
+				top: 130px;
+				left: 300px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="">
+			<button id="btnNews">新闻</button>
+			<button id="btnImg">图片</button>
+			<button id="btnAmry">军事</button>
+		</div>
+
+		<ul class="Ochenge">
+			<li>
+				<a href="">习近平会见全国精神文明建设表彰大会代表</a>
+			</li>
+			<li>
+				<a href="">习近平执政和生活细节 | 怎样培养干部?十九大报告告诉你</a>
+			</li>
+			<li>
+				<a href="">国防部:中俄将举行反导计算机演习 不针对第三方</a>
+			</li>
+			<li>
+				<a href="">落马贪官遭偷拍200G视频 被举报潜规则多名女下属</a>
+			</li>
+			<li>
+				<a href="">"复兴号"高速动车组新增4条线28个站 经过你家吗</a>
+			</li>
+			<li>
+				<a href="">21省公布2017企业工资指导线 你工资是涨还是降 </a>
+			</li>
+			<li>
+				<a href="">为讨好中国 特朗普刚走韩国就让美国吃了闭门羹</a>
+			</li>
+			<li>
+				<a href=""> 租房族好消息! 这13个城市盖的这种房子只租不卖</a>
+			</li>
+		</ul>
+
+		<img src="img/timg.jpg" />
+
+		<ol>
+			<li>
+				<a href="#">这位总统突破封锁历史性访华！全国高官几乎都来了</a>
+			</li>
+			<li>
+				<a href="#">这款电玩游戏暗指台湾为"国家" 外国网友都看不下去</a>
+			</li>
+			<li>
+				<a href="#">美称美台军舰互访符合美国的一中政策 中方强硬表态</a>
+			</li>
+			<li>
+				<a href="#">惹恼国人的韩国组织道歉了 中国网友却更怒了</a>
+			</li>
+			<li>
+				<a href="#">邱少云老班长一等功臣锁德成在老家病逝 享年87岁</a>
+			</li>
+			<li>
+				<a href="#">美军奸杀冲绳少女受审 日媒:日美政府该坐被告席!</a>
+			</li>
+			<li>
+				<a href="#">外媒称五角大楼解读中国强军计划:与美军平起平坐！</a>
+			</li>
+			<li>
+				<a href="#">军方和反对派策划软禁穆加贝已规划一年有余</a>
+			</li>
+		</ol>
+
+		<script type="text/javascript">
+			var oBtnNews = document.querySelector("#btnNews");
+			var oBtnImg = document.querySelector("#btnImg");
+			var oBtnAmry = document.querySelector("#btnAmry");
+			var oUl = document.querySelector("ul");
+			var oIMG = document.querySelector("img");
+			var oOl = document.querySelector("ol");
+			var oBtn = document.querySelectorAll("div button");
+			console.log(oBtn)
+
+			oBtnNews.onclick = function() {
+				for(i = 0; i < oBtn.length; i++) {
+					oBtn[i].style.backgroundColor = "buttonface";
+					oBtn[i].style.borderBottomColor = "#000";
+				}
+				this.style.backgroundColor = "#fff";
+				this.style.borderBottomColor = "#fff";
+				oUl.style.display = "block";
+				oIMG.style.display = "none";
+				oOl.style.display = "none";
+			};
+			oBtnImg.onclick = function() {
+				for(j = 0; j < oBtn.length; j++) {
+					oBtn[j].style.backgroundColor = "buttonface";
+					oBtn[j].style.borderBottomColor = "#000";
+				}
+				this.style.backgroundColor = "#fff";
+				this.style.borderBottomColor = "#fff";
+				oIMG.style.display = "block";
+				oUl.style.display = "none";
+				oOl.style.display = "none";
+			};
+			oBtnAmry.onclick = function() {
+				for(c = 0; c < oBtn.length; c++) {
+					oBtn[c].style.backgroundColor = "buttonface";
+					oBtn[c].style.borderBottomColor = "#000";
+				}
+				this.style.backgroundColor = "#fff";
+				this.style.borderBottomColor = "#fff";
+				oOl.style.display = "block";
+				oUl.style.display = "none";
+				oIMG.style.display = "none";
+			};
+		</script>
+	</body>
+
+</html>
