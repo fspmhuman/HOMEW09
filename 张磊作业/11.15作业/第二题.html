@@ -14,7 +14,7 @@
 			<br> 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
 		</p>
 		<script>
-			var size =15+"px";
+			var size =15;
 			var  odiv = document.getElementsByClassName("gaibian");
 			var bibutton = document.createElement("input");
 			bibutton.type = "button";
@@ -24,7 +24,7 @@
 			bibutton.onclick = function(size){
 				size+=2;
 				odiv.style.fontSize = size+"px";
-			}
+			};
 			
 			var litbutton = document.createElement("button");
 			litbutton.type = "button";
@@ -35,7 +35,8 @@
 			litbutton.onclick = function(){
 				size-=2;
 				odiv.style.fontSize = size+"px";
-			}
+			};
+			
 		</script>
 	</body>
 

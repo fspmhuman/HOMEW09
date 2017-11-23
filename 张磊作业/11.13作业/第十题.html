@@ -8,10 +8,21 @@
 		<!--编写函数maxsame(char1,char2) 返回字符串char1和char2的最大相同子串
 比如maxsame("abcdefghijklmn","mndefghlm") 返回"defgh"-->
 <script>
-	function maxsame(char1,char2){
-		
-		
-	}maxsame("abcdefghijklmn","mndefghlm");
+	function maxsame(str1,str2){
+		var maxlength = 0;
+		var maxstr = "";
+		var zistr ;//存放str2中的所有子串
+		for(var start = 0; start < str2.length; start++) {
+			for(var end = start + 1; end <= str2.length; end++) {
+				zistr = str2.substring(start, end);
+				if(str1.indexOf(zistr) !== -1 && zistr.length > maxlength) {
+					maxlength = zistr.length;
+					maxstr = zistr;
+				}
+			}
+		}	return maxstr;
+		}
+		console.log(maxsame("abcdefghijklmn","mndefghlm"));
 	
 </script>
 

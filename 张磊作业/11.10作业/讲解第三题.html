@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function rev(num){
+				var last=0;//起初是最后一位，后面会变成最终结果；
+				while(num){                       //第一次循环     第二次循环
+					last=last*10 + num % 10;     // 3           33
+					num = parseInt(num/10);      // 2343        234
+				}
+				
+			}
+			
+			
+		console.log(rev(23433))	
+		</script>
+		
+	</body>
+</html>

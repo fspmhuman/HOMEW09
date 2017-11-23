@@ -1,25 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
 	</head>
+
 	<body>
 		<!--编写函数maxr(char) 返回字符串char中最长的连续重复字母
 比如maxr("mmmiijjjjkkkkkkssptr") 返回"kkkkkk"-->
 
-<script>
-	function maxr(char){
-		str =[char];
-	var	max(m) = 0;
-		if(str.indexOf("m") == ture){
-			max(m)+1;
-		}
-	}maxr("mmmiijjjjkkkkkkssptr");
-	
-	
-</script>
+		<script>
+			function maxr(str) {
+				var result = "";//存放最终结果
+				var a = 0; //左指针
+				var b = 1; //右指针
+				var maxletter = ""; //最长重复字母
+				var maxlength = 0; //最长重复字母的长度
+				while(a !== str.length - 1) {
+					if(str.charAt(a) ===str.charAt(b)) {
+						b++; //找到相同指针右移
+					} else {
+						if(b - a >= maxlength) {
+							maxlength = b - a;
+							maxletter = str.charAt(a);
+						}
+						a++;
+						b = a + 1;
+					}}
+					for(var i = 1 ; i <= maxlength; i++){
+						result += maxletter;
+				}
+				return result;
+			}
+//			maxr("mmmiijjjjkkkkkkssptr");
+			console.log(maxr("mmmiijjjjkkkkkkssptr"));
+		</script>
 
-		
 	</body>
+
 </html>
