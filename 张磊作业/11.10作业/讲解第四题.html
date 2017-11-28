@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			function sumsy() {
+				var sum = 0;
+				for(var i = 1; i <= sum; i++) {
+					if(num % i === 0) {
+						sum += i;
+					}
+
+				}
+				return sum;
+			}
+			for(var a = 1; a <= 3000; a++) {
+
+				var b = sumsy(a);
+				if(a === sumsy(b) && a < b) {
+					console.log(a + "和" + b);
+				}
+			}
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0;
+			}
+			
+			header {
+				width: 600px;
+				height: 140px;
+				line-height: 40px;
+				border: 2px solid #f60;
+				margin: 100px;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			header ul {
+				margin: 0;
+				padding: 0;
+				top: 0;
+				left: 0;
+				width: 4000px;
+				height: 140px;
+				position: absolute;
+			}
+			
+			header ul li {
+				margin: 0;
+				padding: 0;
+				border: none;
+				float: left;
+				list-style: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<ul>
+				<li><img src="img/img/0.png" /</li>
+					<li><img src="img/img/1.png" /></li>
+					<li><img src="img/img/2.png" /></li>
+					<li><img src="img/img/3.png" /></li>
+					<li><img src="img/img/4.png" /></li>
+					<li><img src="img/img/5.png" /></li>
+					<li><img src="img/img/6.png" /></li>
+					<li><img src="img/img/7.png" /></li>
+			</ul>
+
+		</header>
+		<script src="js/animate.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var oHeader = document.querySelector("header");
+			var oUl = document.querySelector("header ul ");
+			var oLis = document.querySelectorAll("header ul li");
+			var oLislength = oLis.length;
+			var index = 0;
+			oUl.innerHTML+=oUl.innerHTML;
+
+			function roll() {
+				index++;
+				animate(oUl, {
+					'left': -200 * index
+				}, 1000, "Linear",function() {
+					if(index > oLislength - 1) {
+						index = 0;
+						this.style.left = 0;
+					}
+				});
+			}
+			setInterval(roll, 3000);
+		</script>
+	</body>
+
+</html>
