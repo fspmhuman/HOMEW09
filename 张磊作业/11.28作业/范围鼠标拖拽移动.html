@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 400px;
+				height: 500px;
+				left: 20px;
+				top:40px;
+				position: relative;
+				border: 1px solid #000;
+			}
+			
+			header{
+				width: 60px;
+				height: 60px;
+				position: absolute;
+				background-color: #666;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<header>
+				
+			</header>
+		</div>
+		<script type="text/javascript">
+    var oHeader = document.querySelector('header');
+			var oDiv =document.querySelector('div');
+			var divleft = parseFloat(getComputedStyle(oDiv)['left']) ;
+            var divtop = parseFloat(getComputedStyle(oDiv)["top"]) ;
+            var harfWidth = parseFloat(getComputedStyle(oHeader)['width']) / 2;
+            var harfHeight = parseFloat(getComputedStyle(oHeader)["height"]) / 2;
+		    var obody =document.querySelector('body');
+		oHeader.addEventListener('mousemove', function (event) {
+			oHeader.style.left = (event.clientX-divleft-harfWidth) + 'px';
+            oHeader.style.top = (event.clientY-divtop-harfHeight) + 'px';           
+          },true);
+          
+         oDiv.addEventListener('mousemove', function (event) {
+        event.stopPropagation();        	
+         },false);
+          
+         obody.addEventListener('mousemove', function (event) {
+        event.stopPropagation();        	
+         });
+		</script>
+	</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			header {
+				width: 380px;
+				height: 230px;
+				margin: 0;
+				padding: 0;
+				position: relative;
+				left: 400px;
+				top: 30px;
+				overflow: hidden;
+			}
+			
+			ul {
+				margin: 0;
+				padding: 0;
+				top: 30px;
+				position: absolute;
+			}
+			header ul li a{
+				
+			}
+			
+			header ul li {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			header ul li a{
+				margin: 0;
+				padding: 0;
+			}
+			
+			footer {
+				width: 380px;
+				height: 50px;
+				margin: 0;
+				padding: 0;
+				position: relative;
+				top: 0;
+				left: 400px;
+			}
+			
+			ol {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			
+			footer ol li {
+				float: left;
+				border: 1px solid #fff;
+				cursor: pointer;
+				margin: 0;
+				padding: 0;
+			}
+			
+			footer ol li a img {
+				width: 74px;
+				height: auto;
+				display: block;
+				margin: 0;
+				padding: 0;
+			}
+			img{
+					margin: 0;
+				padding: 0;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<header>
+			<ul>
+				<li>
+					<a href="#"><img src="img/0.jpg" /></a>
+				</li>
+				<li>
+					<a href="#"><img src="img/1.jpg" /></a>
+				</li>
+				<li>
+					<a href="#"><img src="img/2.jpg" /></a>
+				</li>
+				<li>
+					<a href="#"><img src="img/3.jpg" /></a>
+				</li>
+				<li>
+					<a href="#"><img src="img/4.jpg" /></a>
+				</li>
+			</ul>
+		</header>
+
+		<footer>
+			<ol>
+				<li>
+					<a href="#"><img src="img/0.jpg" /></a>
+				</li>
+				<li>
+					<a href="#"><img src="img/1.jpg" /></a>
+				</li>
+				<li>
+					<a href="#"><img src="img/2.jpg" /></a>
+				</li>
+				<li>
+					<a href="#"><img src="img/3.jpg" /></a>
+				</li>
+				<li>
+					<a href="#"><img src="img/4.jpg" /></a>
+				</li>
+			</ol>
+		</footer>
+
+		<script src="js/animate_2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var oHeader = document.querySelector('header');
+			var oUl = document.querySelector('header ul');
+			var oBigLis = document.querySelectorAll('header ul li');
+			var oSmollLis = document.querySelectorAll('footer ol li');
+            var oFooter =document.querySelector('footer');
+			var animateTime = 300;
+			var tweenStyle = 'Linear';
+			var interval = 2300;
+			var Imglength = oBigLis.length;
+			var now = 0;
+			var imglength =234;
+			
+			oUl.appendChild(oBigLis[0].cloneNode(true));			
+			var timer = setInterval(function automatism() {
+					if(oUl.isanimated)return;
+						now++;
+						animate(oUl, {"top": -imglength * now},animateTime, tweenStyle);	
+							if(now > Imglength - 1) {
+								now = 0;
+								oBigLis[now].style.top = 0;}
+					},interval);
+					
+			oUl.onmouseover =function cleartimer(){
+				clearInterval(timer);
+			};
+			oUl.onmouseout =function goOn(){
+				timer =setInterval(function automatism() {
+						now++;
+						animate(oUl, {"top": -imglength * now},animateTime, tweenStyle);	
+							if(now > Imglength - 1) {
+								now = 0;
+								oBigLis[now].style.top = 0;}
+					},interval);
+			}
+			
+			
+			for(i=0;i<oSmollLis.length;i++){
+			(function (m){				
+				oSmollLis[m].onclick =function(){
+						for(j=0;j<oSmollLis.length;j++){
+					oSmollLis[j].style.borderColor ="#fff";	
+					}	
+					if(oUl.isanimated)return;											
+				now=m;
+				oUl.style.top =  -imglength * now +'px';			
+				oSmollLis[m].style.borderColor ="#3ea";
+			}
+			})(i);		
+			}
+		</script>
+	</body>
+</html>
