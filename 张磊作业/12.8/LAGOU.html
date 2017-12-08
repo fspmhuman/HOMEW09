@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>lagou</title>
+		<style type="text/css">
+			div {
+			height: 40px;
+				width: 800px;
+				float: left; 
+				line-height: 35px;
+			}
+			a,span{
+				margin: 0;
+				padding: 0;
+			}
+			section{
+				height:120px;
+				width: 800px;
+				border:1px solid #000;
+				position: relative;
+				margin: 0;
+				padding: 0;
+			}
+			#zw {
+				width: 50px;
+				font-size: 16px;
+				color: #3ea;
+			}
+			
+			#weizhi {
+				width: 30px;
+			}
+			
+			#compityname {
+				right: 100px;
+				position: absolute;
+				color: #3ea;
+				
+			}
+			
+			#jianjie {
+				right: 100px;
+				position: absolute;
+			}
+			
+			#kouhao {
+				right: 100px;
+				position: absolute;
+			}
+			#gz{
+				color: red;
+				
+			}
+			#huise{
+				background: rgba(200,200,200, .5);
+			}
+			#pt{
+				border: 1px solid #FFF5EE;			
+			    padding: 3px;
+			    bottom: 0;
+			}
+			#logo,img{
+				left: 360px;
+				height: 70px;
+				width: 70px;
+				display: block;
+				position: absolute;
+				margin-top: 5px;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<header></header>
+		<script type="text/template" id="tempStr">
+			<section>
+				<!--第一行-->
+				<div>                 <!--需要替换的地方用<%=数据字典%>写-->
+					<a href="#" id="zw"><%=positionName%></a>&nbsp[<a href="#" id="weizhi"><%=city%></a>]<span id="ftime"><%=formatCreateTime%></span><a href="#" id="compityname"><%=companyName%></a>
+				</div>
+                <!--显示的第二行-->
+				<div id="">
+					<span id="gz"><%=salary%></span>&nbsp&nbsp&nbsp<span><%=workYear%></span>/<span><%=education%></span><span id="jianjie"><%=companyLabelList%></span>
+				</div>
+                <!--显示的第三行-->
+				<div id="huise">
+					<span id="pt"><%=positionType%></span><span id="kouhao"><%=positionAdvantage%></span>
+				</div>
+				<!--后面的公司logo商标图-->
+				<a id="logo" href="#">
+					<img src=""/>
+				</a>
+			</section>
+			
+		</script>
+		<script src="js/underscorejs.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/myajax2.0.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			var eleHeader = document.querySelector("header");
+			var tempStr = document.querySelector("#tempStr").innerHTML;
+			//通过ajax获取json文档中的数据                            
+			myajax.get("./lagou.json", {}, function(err, data) {
+				                     // 通过连续打点方法找到需要填充的字典位置
+				var dictionary = JSON.parse(data).content.result;
+				_.each(dictionary, function(ele) {
+					//将模板内容填充到header中
+					eleHeader.innerHTML += _.template(tempStr)(ele);
+				});
+			});
+		</script>
+	</body>
+
+</html>
